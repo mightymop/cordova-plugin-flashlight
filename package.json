@@ -1,0 +1,45 @@
+{
+  "_from": "git+https://github.com/mightymop/cordova-plugin-flashlight.git",
+  "_id": "cordova-plugin-flashlight@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-flashlight",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/mightymop/cordova-plugin-flashlight.git",
+    "rawSpec": "https://github.com/mightymop/cordova-plugin-flashlight.git",
+    "saveSpec": "git+https://github.com/mightymop/cordova-plugin-flashlight.git",
+    "fetchSpec": "https://github.com/mightymop/cordova-plugin-flashlight.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "git+https://github.com/mightymop/cordova-plugin-flashlight.git",
+  "_spec": "https://github.com/mightymop/cordova-plugin-flashlight.git",
+  "author": "",
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-flashlight",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "ISC",
+  "name": "cordova-plugin-flashlight",
+  "types": "./types/index.d.ts",
+  "version": "1.0.0"
+}
