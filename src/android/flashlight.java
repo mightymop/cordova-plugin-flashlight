@@ -1,4 +1,3 @@
-```
 package de.mopsdom.flashlight;
 
 import android.content.Context;
@@ -101,4 +100,3 @@ public class flashlight extends CordovaPlugin {
         }
     }
 }
-```
