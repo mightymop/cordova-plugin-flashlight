@@ -9,8 +9,6 @@
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/flashlight.js" target="js/flashlight.js"/>
-
   <js-module src="www/flashlight.js" name="flashlight">
      <clobbers target="flashlight" />
   </js-module>
