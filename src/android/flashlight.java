@@ -1,12 +1,14 @@
+```
 package de.mopsdom.flashlight;
 
-import android.content.res.Configuration;
+import android.content.Context;
 
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
@@ -20,27 +22,26 @@ public class flashlight extends CordovaPlugin {
     private static boolean isFlashlightOn = false;
 	private static boolean hasFlashlight = false;
 
+	@Override
+	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+		super.initialize(cordova, webView);
 
-  @Override
-  public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-    super.initialize(cordova, webView);
-
-		cameraManager = (CameraManager) context.getSystemService(Context.CAMERA_SERVICE);
-        try {
-            // Überprüfen, ob die Kamera-LED unterstützt wird
-            if (context.getPackageManager().hasSystemFeature(android.content.pm.PackageManager.FEATURE_CAMERA_FLASH)) {
-                cameraId = cameraManager.getCameraIdList()[0];
+		cameraManager = (CameraManager) cordova.getActivity().getSystemService(Context.CAMERA_SERVICE);
+		try {
+			// Überprüfen, ob die Kamera-LED unterstützt wird
+			if (cordova.getActivity().getPackageManager().hasSystemFeature(android.content.pm.PackageManager.FEATURE_CAMERA_FLASH)) {
+				cameraId = cameraManager.getCameraIdList()[0];
 				flashlight.hasFlashlight=true;
-            } else {
-                flashlight.hasFlashlight=false;
-            }
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
+			} else {
+				flashlight.hasFlashlight=false;
+			}
+		} catch (CameraAccessException e) {
+			e.printStackTrace();
 			flashlight.hasFlashlight=false;
-        }
-  }
+		}
+	}
 
-    @Override
+	@Override
     public boolean execute(final String action, final JSONArray data, final CallbackContext callbackContext) {
 
 	
@@ -100,3 +101,4 @@ public class flashlight extends CordovaPlugin {
         }
     }
 }
+```
