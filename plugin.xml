@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="cordova-plugin-flashlight"
-        version="1.0.0">
+        version="1.0.1">
 
   <name>flashlight</name>
 
@@ -15,6 +15,12 @@
 
   <platform name="android">
 
+
+	<config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.CAMERA" />
+	  <uses-permission android:name="android.permission.FLASHLIGHT" />
+    </config-file>
+	
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="flashlight">
         <param name="android-package" value="de.mopsdom.flashlight.flashlight"/>
